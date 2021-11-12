@@ -10,4 +10,16 @@ def index():
 def loginfun():
     return render_template('/home/gopal/Desktop/hack_flip/ML001_MOVIE_RECOMMENDATION_ENGINE/templates/login.html')    
 
+@app.route('/login',methods = ['POST'])
+def login():
+    # if 'user' in session:
+    #     return render_template('home-sani.html',redic=session['userData'])
+    return render_template('login.html')
+
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+# if __name__ == '__main__':
 app.run(debug=True)

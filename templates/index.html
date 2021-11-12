@@ -4,7 +4,7 @@
   <div class="container-fluid">
     <ul class="navbar-nav ml-auto mr-5">
       <li class="nav-item">
-        <form action="http://localhost:5000/login" method="POST">
+        <form action="{{url_for('login')}}" method="POST">
           <button  class="btn btn-md text-center ml-2 my-auto" style="border-radius: 0.7vw; background-color: #0080ff;float: right; color: white;width: 10vw;height: 3vw; font-size: 1.3vmax;" onclick="index()">
             SIGN IN
           </button>
@@ -14,30 +14,31 @@
   </div>
 {% endblock %}
 {% block content %}
-  <div style="background-image:url('static/image/bg.jpg');background-size: cover ;height: 900px;opacity: 0.9;">
+  <div style="background-image:url('static/image/bg.jpg');background-repeat: no-repeat;background-size: cover; width: 100%;height: auto;opacity: 0.8;">
     <div class="row">
       <div class="col-6"></div>
-        <div class="col-6 mx-auto text-center h-100">
-          <h1 style="color:white;font-weight: 600;font-size: 4vmax;" class="display-4"><br><br><br>Discover your  <br>
+        <div class="col-6 mx-auto text-center h-100" style="padding: 0;">
+          <h1 style="color:white;font-weight: 600;font-size: 4vmax;" class="display-4"><br><br><br>  <br>
             <span
               class="txt-rotate"
               data-period="2000"
-              data-rotate='[  "New", "Related"  ]'>
+              data-rotate='[  "Made with #LOVE", "Delivered on #TIME"  ]'>
             </span>
-            Movies<br> in a few clicks<br>
+           
           </h1>
-          <h3 style="color: black;font-weight: 200; font-size: 2vmax;">
-            Find a perfect match to your mood!!
+          <h3 style="color: rgb(243, 226, 226);font-weight: 200; font-size: 2vmax;">
+            Food for hungry
           </h3>
-          <a href="{{url_for('index')}}">
-          <button class="btn btn-lg btn-outline-light my-3 py-auto"  style="background-color: transparent;color: white;width: 15vw;height: 4vw;border-radius: 0.7vw;font-size: 1.5vmax;">
+          <a href="{{url_for('register')}}">
+          <button class="btn btn-lg btn-outline-light my-3 py-auto sign_up"  style="background-color: transparent;color: white;width: 15vw;height: 4vw;border-radius: 0.7vw;font-size: 1.5vmax;">
             TRY IT NOW
           </button>
+          <br><br><br>  <br>  <br><br><br>  <br>
         </a>
         </div>
       </div>
     </div>
-    <div style="background-color: black; height: 100%; " class="my-2">
+    <div style="background-color: black; height: 100%; " class="mt-2">
       <div class="row">
         <div class="col-4 py-5 ml-5" >
           <div class="card  my-5 " style=" border-color: white;height: 15vw; width: 25vw; margin-left: 6.5vw; ">
@@ -99,8 +100,15 @@
           <i class="fab fa-instagram mx-2" style="font-size: 2.5vw;">
           </i>
         </a>
-      </div>  
-      </div>
+
+        
+      </div> 
+      <div class="social d-flex justify-content-center mt-5" >
+        <div class="container"  style="text-align: center; color: aliceblue;" >
+          Copyright &copy; Hungrezy 2021
+        </div>
+      </div> 
+    </div>
   </div>    
 {% endblock %}
     

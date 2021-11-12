@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <script src="../static/script/script.js"></script>
+    <script src="../static/script/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -31,7 +31,7 @@
 
   </head>
   
-  <body style="background-color: rgb(241, 235, 235);">
+  <body style=" width: 100%;background-color: rgb(241, 235, 235);">
    
     <header class="position-static">
       <div class="row">
@@ -39,7 +39,7 @@
         <nav class="navbar  fixed-top navbar-expand-lg mb-7  navbar-dark bg-dark" style="height: 5vw;">
           <a class="navbar-brand" href="home.html">
             <img src="../static/img/logo.png" width="30" height="30" class="d-inline-block align-top a"  style="border-radius: 50%;" alt="">
-            Hungrezy
+            <i>Hungrezy</i>
             </a>
           {% block navbar %}{%endblock%} 
         </nav>
@@ -54,11 +54,7 @@
     {% block content %}
     {% endblock %}
     
-    <footer class="bg-black small text-center text-white-50">
-      <div class="container" >
-        Copyright &copy; MOVIE_RECOMMENDATION_ENGINE 2019
-      </div>
-    </footer>
+    
 
     
   </body>
