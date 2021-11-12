@@ -7,7 +7,16 @@ app.secret_key=os.urandom(24)
 def index():
     return render_template('index.html')
 
+@app.route('/login',methods = ['POST'])
+def login():
+    # if 'user' in session:
+    #     return render_template('home-sani.html',redic=session['userData'])
+    return render_template('login.html')
 
 
-if __name__ == '__main__':
-    app.run()
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+# if __name__ == '__main__':
+app.run(debug=True)
