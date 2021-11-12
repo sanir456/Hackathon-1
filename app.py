@@ -6,8 +6,8 @@ app.secret_key=os.urandom(24)
 @app.route('/')
 def index():
     return render_template('index.html')
+@app.route('/login',methods = ['POST'])
+def loginfun():
+    return render_template('/home/gopal/Desktop/hack_flip/ML001_MOVIE_RECOMMENDATION_ENGINE/templates/login.html')    
 
-
-
-if __name__ == '__main__':
-    app.run()
+app.run(debug=True)
