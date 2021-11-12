@@ -12,18 +12,11 @@ html{
       padding-bottom: 75px;
   }
 
-  .userProf{
-    margin-top: 5%;
-    width: 250px;
-    max-width: 250px;
-    border-radius: 50%;
-  }
-
-  .card-zoom{
-    transition: 0.25s;
-  }
-
-  .card-zoom:hover {
-    transform: scale(1.2);
+  .sign_up {
+    transition-duration: 0.4s;
   }
   
+  .sign_up:hover {
+    background-color: #db2626; 
+    color: white;
+  }
