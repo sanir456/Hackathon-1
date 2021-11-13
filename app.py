@@ -33,7 +33,7 @@ def failedauth():
     return "Either Email-id or password is incorrect!"    
 
 @app.route('/loginuser', methods = ['POST'])
-def userlogin():
+def loginuser():
     email_id = request.form['userEmailAdd']
     password = request.form['password']
 
@@ -57,7 +57,7 @@ def success(fname, lname):
     return 'Welcome '+fname + ' ' + lname
 
 @app.route('/registeruser', methods = ['POST'])
-def reguser():
+def registeruser():
     first_name = request.form['userFName']
     last_name = request.form['userLName']
     email_id = request.form['userEmailAdd']
