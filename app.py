@@ -76,6 +76,9 @@ def registeruser():
 def register():
     return render_template('register.html')
 
+@app.route('/menu',methods=['POST'])
+def menu():
+    return render_template('menu.html')
 
 # if __name__ == '__main__':
 app.run(debug=True)
