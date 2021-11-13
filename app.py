@@ -1,18 +1,18 @@
 from flask import Flask,flash,render_template,url_for,request,session,g,redirect
-from flaskext.mysql import MySQL
+# from flaskext.mysql import MySQL
 import os
 
 app = Flask(__name__)
 app.secret_key=os.urandom(24)
-mysql = MySQL()
-app.config['MYSQL_DATABASE_USER'] = 'gopal'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
-app.config['MYSQL_DATABASE_DB'] = 'flip'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-mysql.init_app(app)
+# mysql = MySQL()
+# app.config['MYSQL_DATABASE_USER'] = 'gopal'
+# app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
+# app.config['MYSQL_DATABASE_DB'] = 'flip'
+# app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+# mysql.init_app(app)
 
-conn = mysql.connect()
-cursor =conn.cursor()
+# conn = mysql.connect()
+# cursor =conn.cursor()
 
 #cursor.execute("SELECT * from User")
 #data = cursor.fetchone()
@@ -36,7 +36,7 @@ def failedauth():
 def loginuser():
     email_id = request.form['userEmailAdd']
     password = request.form['password']
-
+    return render_template('home.html',dic = ["static/image/r1.jpg","static/image/r2.jpg","static/image/r3.jpg","static/image/r4.jpg","static/image/r5.jpg",])
     cursor.execute('SELECT email, password from user')
     results = cursor.fetchall()
 

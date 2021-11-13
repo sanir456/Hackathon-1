@@ -71,3 +71,15 @@ var TxtRotate = function(el, toRotate, period) {
     document.body.appendChild(css);
   };
       
+
+  function linkAction(Id){
+    navLink = document.querySelectorAll('.nav-link');
+
+    menu = document.getElementById(Id);
+    navLink.forEach(n => n.classList.remove('active'));
+    menu.classList.add('active');
+
+    const navMenu = document.getElementById('navMenu')
+    navMenu.classList.remove('show')
+    flag = false
+} 
