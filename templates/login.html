@@ -17,7 +17,7 @@
 {% endblock %}
      
 {%block content %}    
-<div style="background-image:url('static/image/login.jpg');background-size: cover ;height: 900px;opacity: 0.8;">
+<div style="background-image:url('static/image/login.jpg');background-size: cover ;height: 900px;">
   <div class="row  mx-auto" style="width: 35vw;"> 
     <div class="col-12" style="margin-top: 10vw;">
       <div class="card " style="height:500px ;width: 33vw; background-color: rgba(0,0,0,.7); ">
@@ -27,7 +27,7 @@
               SIGN IN
             </b>
           </h1>
-          <form class="form-signin " method="post" action="{{ url_for('login')}}">
+          <form class="form-signin " method="post" action="http://localhost:5000/loginuser">
             <div class="my-5">
               <input  type="email" id="inputUserEamilAdd" placeholder="Entet Email Address" class="form-control " style="border-radius: 0.5vw;background-color: #222;height: 3.5vw;width: 22.5vw;font-size: 1.5vw;" name="userEmailAdd" required >
             </div>
