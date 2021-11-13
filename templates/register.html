@@ -27,7 +27,7 @@
               REGISTER
             </b>
           </h1>
-          <form class="form-signin " method="post" action="http://localhost:5000/registeruser">
+          <form class="form-signin " method="POST" action="{{url_for('registeruser')}}">
             <div class="my-4">
               <input  type="text" id="inputUserFName" placeholder="Entet First  Name" class="form-control " style="border-radius: 0.5vw;background-color: #222;height: 3.5vw;width: 22.5vw;font-size: 1.5vw;" name="userFName" required >
             </div>
