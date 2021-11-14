@@ -46,7 +46,7 @@ def loginuser():
 
     return redirect(url_for('failedauth'))        
 
-@app.route('/login',methods = ['POST'])
+@app.route('/login',methods = ['POST','GET'])
 def login():
     # if 'user' in session:
     #     return render_template('home-sani.html',redic=session['userData'])
@@ -79,6 +79,10 @@ def register():
 @app.route('/menu',methods=['POST'])
 def menu():
     return render_template('menu.html')
+
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
 
 # if __name__ == '__main__':
 app.run(debug=True)

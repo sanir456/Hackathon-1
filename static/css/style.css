@@ -26,7 +26,7 @@ html{
     height: 3rem;
     display: flex;
     justify-content:  space-between;
-    align-items: center;
+    align-items: left;
     font-weight: 600;
 }
 
@@ -47,6 +47,7 @@ html{
         padding: 2rem;
         background-color: white;
         transition: .75s;
+        float: right;
     }
 
     .home-img{
