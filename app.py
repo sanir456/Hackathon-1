@@ -1,18 +1,18 @@
 from flask import Flask,flash,render_template,url_for,request,session,g,redirect
-# from flaskext.mysql import MySQL
+from flaskext.mysql import MySQL
 import os
 
 app = Flask(__name__)
 app.secret_key=os.urandom(24)
-# mysql = MySQL()
-# app.config['MYSQL_DATABASE_USER'] = 'gopal'
-# app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
-# app.config['MYSQL_DATABASE_DB'] = 'flip'
-# app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-# mysql.init_app(app)
+mysql = MySQL()
+app.config['MYSQL_DATABASE_USER'] = 'gopal'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
+app.config['MYSQL_DATABASE_DB'] = 'flip'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+mysql.init_app(app)
 
-# conn = mysql.connect()
-# cursor =conn.cursor()
+conn = mysql.connect()
+cursor =conn.cursor()
 
 #cursor.execute("SELECT * from User")
 #data = cursor.fetchone()
@@ -36,21 +36,23 @@ def failedauth():
 def loginuser():
     email_id = request.form['userEmailAdd']
     password = request.form['password']
-    return render_template('home.html',dic = ["static/image/r1.jpg","static/image/r2.jpg","static/image/r3.jpg","static/image/r4.jpg","static/image/r5.jpg",])
-    cursor.execute('SELECT email, password from user')
+    
+    cursor.execute('SELECT fname, email, password from user')
     results = cursor.fetchall()
 
     for row in results:
-        if email_id==row[0] and password==row[1]:
-            return redirect(url_for('successauth'))
+        if email_id==row[1] and password==row[2]:
+            return render_template('home.html',name = row[0], dic = ["static/image/r1.jpg","static/image/r2.jpg","static/image/r3.jpg","static/image/r4.jpg","static/image/r5.jpg",])
 
-    return redirect(url_for('failedauth'))        
+    return  render_template('login.html',perror = "Either Email-id or password is incorrect!")
 
-@app.route('/login',methods = ['POST'])
+@app.route('/login',methods=['POST'])
 def login():
     # if 'user' in session:
     #     return render_template('home-sani.html',redic=session['userData'])
     return render_template('login.html')
+
+
 
 @app.route('/success<fname><lname>')
 def success(fname, lname):
