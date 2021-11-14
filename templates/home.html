@@ -1,25 +1,17 @@
 {% extends "frame.html" %}
 {% block title %}INDEX{% endblock %}
 {% block navbar %}
-<div class="col-8" style=" padding-top: 1.5%;padding-left: 15%;">
-    <form action="{{url_for('login')}}" method="POST">
-        <div class="input-group mb-3"  >
-            <input type="text" class="form-control"  placeholder=" Search Restaurant....." style=" border-radius: 5px; " name="search" required>
-            <div>
-                <button type="submit"  class="btn btn-outline-secondary btn-primary" style=" color: black;background-color: blue;">Search
-                </button>        
-            </div>    
-        </div>
-        
-    </form>
 
-</div>
 
 <div class="container-fluid col-2">
 
    <ul class="navbar-nav ml-auto mr-3">
         <li class="nav-item">
             <a class="nav-link" href="{{url_for('login')}}">Home</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('cart')}}">cart</a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" routerLink="#" id="navbardrop" data-toggle="dropdown">
