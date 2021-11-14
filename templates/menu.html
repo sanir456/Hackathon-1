@@ -1,25 +1,16 @@
 {% extends "frame.html" %}
 {% block title %}INDEX{% endblock %}
 {% block navbar %}
-<div class="col-8" style=" padding-top: 1.5%;padding-left: 15%;">
-    <form action="{{url_for('login')}}" method="POST">
-        <div class="input-group mb-3"  >
-            <input type="text" class="form-control"  placeholder=" Search Restaurant....." style=" border-radius: 5px; " name="search" required>
-            <div>
-                <button type="submit"  class="btn btn-outline-secondary btn-primary" style=" color: black;background-color: blue;">Search
-                </button>        
-            </div>    
-        </div>
-        
-    </form>
-
-</div>
 
 <div class="container-fluid col-2">
 
    <ul class="navbar-nav ml-auto mr-3">
         <li class="nav-item">
             <a class="nav-link" href="{{url_for('login')}}">Home</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('cart')}}">cart</a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" routerLink="#" id="navbardrop" data-toggle="dropdown">
@@ -35,6 +26,37 @@
 {% endblock %}
 
 {% block content %}
+
+
+<style>
+
+.plus-minus-input {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.plus-minus-input .input-group-field {
+  text-align: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 1rem;
+}
+
+.plus-minus-input .input-group-field::-webkit-inner-spin-button,
+.plus-minus-input .input-group-field ::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+.plus-minus-input .input-group-button .circle {
+  border-radius: 50%;
+  padding: 0.25em 0.8em;
+}
+
+
+
+</style>
 <div class="container" style="color: black;background-color: white;margin-top: 100px;border-radius: 10px;">
     <div class="page text-center">
         <div class="nav-menu" id="navMenu">
@@ -69,7 +91,7 @@
                                     <span><p class="card-title" style="text-align: left;font-size: 1vw;">Name</p>   </span>
                                     <span style="display: inline-flex;">
                                         <p style="text-align: left;width: 50%; margin: 0;">xxx Rs.</p>
-                                        <button class="btn btn-md text-center ml-2 my-auto" style="border-radius: 0.7vw; background-color: #f03f20;float: right; color: white;width: 10vw;height: 3vw; font-size: 1.3vmax;">Add + </button>
+                                        <button class="btn btn-md text-center ml-2 my-auto" style="border-radius: 0.7vw; background-color: #f03f20;float: right; color: white;width: 10vw;height: 3vw; font-size: 1.3vmax;">Add + </button> 
                                     </span>
                                     
                                 </div>
