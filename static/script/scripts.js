@@ -123,3 +123,58 @@ $(document).ready(function(){
   });
 });
 
+
+function addCart(name,price) {
+    if(sessionStorage.getItem("item_count") === null)
+    {
+      sessionStorage.setItem("item_count", 1);
+      sessionStorage.setItem("item1",name);
+      sessionStorage.setItem("item1_price",price);
+    }
+    else
+    {
+      var item = parseInt(sessionStorage.getItem("item_count"));
+      sessionStorage.setItem("item_count",item+1);
+      var item_name = "item"+ item.toString();
+      sessionStorage.setItem(item_name,name);
+      var iten_price = "item"+ item.toString()+"_price";
+      sessionStorage.setItem(iten_price,price);
+    }
+}      
+
+function viewCart(){
+  console.log("in view cart");
+  var div = document.getElementById("view");
+  var text = "<div class=\"row pt-2\"> <div class=\"col-8 text-center\">Food Item</div> <div class=\"col-3 text-center\">Price</div></div>";
+  var item =parseInt(sessionStorage.getItem("item_count"));
+  var total=0;
+  for (let i = 1; i <= item; i++) {
+    text = text + "<hr>";
+    text = text + "<div class=\"row pt-2 pb-2\">";
+    text = text + "    <div class=\"col-4\">";
+    text = text + "        <img class=\"card-img\" style=\"height: 75px; width: 50%;border-radius: 5%; \" src=\"static/image/r1.jpg\" onerror=\"this.src='../static/img/alt.png';\" >";
+    text = text + "    </div>";
+    text = text + "    <div class=\"col-4\">";
+    var item_name = "item"+ i.toString();
+    text = text + "        <span><p class=\"card-title \" style=\"text-align: left;font-size: 1vw;\">" + sessionStorage.getItem(item_name) + "</p>  </span>";
+    text = text + "    </div>";
+    text = text + "   <div class=\"col-3\">";
+    var iten_price = "item"+ i.toString()+"_price";
+    total = total + parentInt(sessionStorage.getItem(iten_price));
+    text = text + "        <p style=\"text-align: center;width: 50%; margin: 0;\">"+ sessionStorage.getItem(iten_price) +"Rs.</p>";
+    text = text + "    </div>"
+    text = text + "</div>"
+  }
+  text = text + "<hr>";
+  text = text + "      <div class=\"row pt-2 pb-2\">";
+  text = text + "<div class=\"col-4\">";
+  text = text + "          </div>";
+  text = text + "<div class=\"col-4\">";
+  text = text + "            </div>";
+  text = text + "<div class=\"col-3\">";
+  text = text + "                <p style=\"text-align: center;width: 50%; margin: 0;\">Total :"+ total.toString() + "Rs.</p>";
+  text = text + "</div>";
+  text = text + "</div>";
+
+  div.innerHTML = text;
+}
