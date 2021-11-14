@@ -32,6 +32,11 @@ def successauth():
 def failedauth():
     return "Either Email-id or password is incorrect!"    
 
+def fetchresname():
+    cursor.execute('show tables')
+    results = cursor.fetchall()
+    return results
+
 @app.route('/loginuser', methods = ['POST'])
 def loginuser():
     email_id = request.form['userEmailAdd']
@@ -42,9 +47,17 @@ def loginuser():
 
     for row in results:
         if email_id==row[1] and password==row[2]:
-            return render_template('home.html',name = row[0], dic = ["static/image/r1.jpg","static/image/r2.jpg","static/image/r3.jpg","static/image/r4.jpg","static/image/r5.jpg",])
+            return render_template('home.html',name = row[0],restName = fetchresname(), dic = ["static/image/r1.jpg","static/image/r2.jpg","static/image/r3.jpg","static/image/r4.jpg","static/image/r5.jpg",])
 
     return  render_template('login.html',perror = "Either Email-id or password is incorrect!")
+
+@app.route('/restaurant')
+def restaurant():
+    name = request.form['restName']
+    cursor.execute("Select * from " + name)
+    results = cursor.fetchall()
+    for row in results:
+        print(row)
 
 @app.route('/login',methods=['POST'])
 def login():
@@ -77,10 +90,16 @@ def registeruser():
 @app.route('/register')
 def register():
     return render_template('register.html')
+     
 
 @app.route('/menu',methods=['POST'])
 def menu():
-    return render_template('menu.html')
+    name = request.form['restName']
+    cursor.execute("Select * from " + name)
+    results = cursor.fetchall()
+    for row in results:
+        print(row)
+    #return render_template('menu.html')
 
 # if __name__ == '__main__':
 app.run(debug=True)
