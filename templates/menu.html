@@ -1,0 +1,104 @@
+{% extends "frame.html" %}
+{% block title %}INDEX{% endblock %}
+{% block navbar %}
+<div class="col-8" style=" padding-top: 1.5%;padding-left: 15%;">
+    <form action="{{url_for('login')}}" method="POST">
+        <div class="input-group mb-3"  >
+            <input type="text" class="form-control"  placeholder=" Search Restaurant....." style=" border-radius: 5px; " name="search" required>
+            <div>
+                <button type="submit"  class="btn btn-outline-secondary btn-primary" style=" color: black;background-color: blue;">Search
+                </button>        
+            </div>    
+        </div>
+        
+    </form>
+
+</div>
+
+<div class="container-fluid col-2">
+
+   <ul class="navbar-nav ml-auto mr-3">
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('login')}}">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLink="#" id="navbardrop" data-toggle="dropdown">
+            </a>
+            <div class="dropdown-menu mt-3"  >
+                <a class="dropdown-item" href="{{url_for('login')}}" >My Profile</a>
+                <a class="dropdown-item" href="{{url_for('login')}}" >Log Out</a>
+            </div>  
+            
+        </li>
+    </ul> 
+  </div> 
+{% endblock %}
+
+{% block content %}
+<div class="container" style="color: black;background-color: white;margin-top: 100px;border-radius: 10px;">
+    <div class="page text-center">
+        <div class="nav-menu" id="navMenu">
+            <ul class="nav-list row">
+                <li class="nav-item col-3"><p class="nav-link active" id="h" onclick="linkAction('h')">nearbyme</p></li>
+                <li class="nav-item col-3"><p class="nav-link" id="a" onclick="linkAction('a')">bestseller</p></li>
+                <li class="nav-item col-3"><p class="nav-link " id="p" onclick="linkAction('p')">my favourite</p></li>
+                <li class="nav-item col-3"><p class="nav-link" id="c" onclick="linkAction('c')">offers</p></li>
+            </ul>
+        </div>
+
+        <div class="container" style="color: black;background-color: white;border-radius: 10px;">
+            <div class="page text-center">
+                
+                <div class="row pb-2" >
+                    <div class="col-5">
+                        <div class="card" style="height: 100%; width: 80%;border-radius: 5%;" >
+                            <img class="card-img"  src="static/image/r1.jpg" style="border-radius: 5%;" onerror="this.src='../static/img/alt.png';" >
+                            <div class="card-img-overlay text-center  d-flex flex-column justify-content-end" style="border-radius: 5%;background: linear-gradient(to top,#000 30% ,transparent); color: wheat;" > 
+                        
+                                <p class="card-title" style="font-size: 1vw;">Name</p>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        
+                        <div class="row">
+                            <div class="col-6 p-lg-auto"  >
+                                <p class="text-success" style="text-align: left;"> veg</p>
+                                <img class="card-img" style="height: 150px; width: 100%;border-radius: 5%; " src="static/image/r1.jpg" onerror="this.src='../static/img/alt.png';" >
+                                <div style="display: inline-block;text-align: center;" class=" text-center mt-2 d-flex flex-column justify-content-end"  > 
+                                    <span><p class="card-title" style="text-align: left;font-size: 1vw;">Name</p>   </span>
+                                    <span style="display: inline-flex;">
+                                        <p style="text-align: left;width: 50%; margin: 0;">xxx Rs.</p>
+                                        <button class="btn btn-md text-center ml-2 my-auto" style="border-radius: 0.7vw; background-color: #f03f20;float: right; color: white;width: 10vw;height: 3vw; font-size: 1.3vmax;">Add + </button>
+                                    </span>
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="col-6 p-lg-auto"  >
+                                <p class="text-danger" style="text-align: left;"> non-veg</p>
+                                <img class="card-img" style="height: 150px; width: 100%;border-radius: 5%; " src="static/image/r1.jpg" onerror="this.src='../static/img/alt.png';" >
+                                <div style="display: inline-block;text-align: center;" class=" text-center mt-2 d-flex flex-column justify-content-end"  > 
+                                    <span><p class="card-title" style="text-align: left;font-size: 1vw;">Name</p>   </span>
+                                    <span style="display: inline-flex;">
+                                        <p style="text-align: left;width: 50%; margin: 0;">xxx Rs.</p>
+                                        <button class="btn btn-md text-center ml-2 my-auto" style="border-radius: 0.7vw; background-color: #f03f20;float: right; color: white;width: 10vw;height: 3vw; font-size: 1.3vmax;">Add + </button>
+                                    </span>
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
